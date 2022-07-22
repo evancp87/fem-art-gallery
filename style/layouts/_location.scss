@@ -1,0 +1,28 @@
+@use "../abstracts/" as a;
+
+#map {
+  min-height: 100%;
+}
+
+// mobile first workflow
+.grid {
+  display: grid;
+  grid-template-rows: 2fr 2fr 1fr;
+  min-height: 100vh;
+  // @include media query
+}
+
+.location-info {
+  color: a.$white;
+  background-color: a.$black;
+  .location-info__header {
+    @extend %heading;
+    font-size: 50px;
+    line-height: 88px;
+    color: currentColor;
+
+    + .location-info__sub-heading {
+      color: a.$gold;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+// Font sizes
+$large-font: 1.5em;
+$medium-font: 1em;
+$small-font: 0.8em;
+$medium-weight: 500;
+$lg-weight: 700;
+$heading: 80px;
+
+// Typography
+
+// Placeholder for headings, extended for different sizes, with only the font-size and line-height added in
+@use "./colors" as c;
+
+%heading {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-weight: 900;
+  color: c.$black;
+  // font-size: 96px;
+  // line-height: 88px;
+  text-transform: uppercase;
+}
+
+// Placeholder for body text
+
+%body-text {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 32px;
+  // add color, font-size and line-height
+}

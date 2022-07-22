@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@300;800;900&family=Outfit:wght@300&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./dist/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+  <title>Frontend Mentor | Art gallery website</title>
+</head>
+
+<body>
+  <button class="location__back-btn">
+    <a href="./index.html">
+      Back to Home
+    </a>
+  </button>
+  <!-- https://leafletjs.com/ -->
+  <div class="grid">
+
+    <header class="location">
+      <div id="map"></div>
+    </header>
+
+    <main class="location-info">
+      <h1 class="location-info__header">
+        Our location
+      </h1>
+
+      <h3 class="location-info__sub-heading">
+        99 King Street
+      </h3>
+      <p class="location-info__address">
+
+        Newport</br>
+        RI 02840</br>
+        United States of America
+      </p>
+
+      <p class="location-info__about">
+        Our newly opened gallery is located near the Edward King House on 99 King
+        Street, the Modern Art Gallery is free to all visitors and open seven days
+        a week from 8am to 9pm.
+
+      </p>
+
+    </main>
+
+    <footer class="ftr location-ftr">
+      <h2>
+        Modern Art Gallery
+
+      </h2>
+
+      <p class="ftr__info ftr__info--location">
+        The Modern Art Gallery is free to all visitors and open seven days a week
+        from 8am to 9pm. Find us at 99 King Street, Newport, USA.
+
+      </p>
+      <div class="socials">
+        <ul class="socials__list">
+          <li class="socials__list-item"><img src="./assets/icon-facebook.svg"></li>
+          <li class="socials__list-item"><img src="./assets/icon-instagram.svg"></li>
+          <li class="socials__list-item"><img src="./assets/icon-twitter.svg"></li>
+        </ul>
+      </div>
+
+    </footer>
+
+  </div>
+  <script>
+
+    const map = L.map('map').setView([41.481493, -71.310328], 13);
+
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+  </script>
+</body>
+
+</html>

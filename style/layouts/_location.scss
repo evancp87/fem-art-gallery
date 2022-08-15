@@ -1,20 +1,18 @@
 @use "../abstracts/" as a;
 
+// leaflet js
 #map {
   min-height: 100%;
 }
 
-// mobile first workflow
-
+// fixes button at top of page
 .location__back-btn {
   display: inline-flex;
   position: absolute;
-  //   justify-content: center;
   align-items: center;
   z-index: 100;
-  // width: 75vw;
   top: 0;
-  left: 10%;
+  left: 20%;
   background-color: a.$black;
   color: a.$white;
 
@@ -28,14 +26,11 @@
     .location__btn-icon {
       background-color: a.$black;
     }
-
-    // .location__btn-icon {
-    //   background-color: a.$gold;
-    //   padding: 1em;
-    // }
   }
-  @include a.md-phone {
-    // width: 25vw;
+
+  // smaller gap on larger devices
+  @include a.xs-tablets-v2 {
+    left: 10%;
   }
 
   .location__btn-icon {
@@ -56,15 +51,16 @@
   }
 }
 
+// set grid of page
 .grid {
   display: grid;
   grid-template-rows: 2fr 2fr 1fr;
   min-height: 100vh;
   position: relative;
   z-index: 50;
-  // @include media query
 }
 
+// main information of page, subheadings and paragraph
 .location-info {
   color: a.$white;
   background-color: a.$black;
@@ -78,7 +74,6 @@
   .location-info__header {
     @extend %heading;
     font-size: 50px;
-    // line-height: 88px;
     color: currentColor;
     margin-right: 2.5em;
     @include a.xl-tablets {

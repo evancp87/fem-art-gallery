@@ -1,5 +1,7 @@
 @use "../abstracts/" as *;
 
+// gives default styles to footers on both pages and uses mixin for different device sizes
+
 .home-ftr,
 .location-ftr {
   @extend %ftr;
@@ -14,13 +16,13 @@
       $align-items: baseline
     );
   }
-  // @include md-tablet-breakpoint {
-  // }
+
   @include desktop-breakpoint {
     padding: 5rem 10rem;
   }
 }
 
+// home footer bg color and font color
 .home-ftr {
   background-color: $black;
 
@@ -29,6 +31,7 @@
   }
 }
 
+// default styles for headings on both pages
 .home-ftr__heading,
 .ftr_heading {
   @extend %heading;
@@ -44,6 +47,9 @@
     max-width: 100%;
   }
 }
+
+// default styles for footer info on both pages
+
 .ftr__info {
   @extend %body-text;
   font-size: 18px;
@@ -57,8 +63,8 @@
     flex: 0 1 400px;
   }
 }
-// location page footer
 
+// social media buttons
 .socials {
   flex: 0 1 100px;
 

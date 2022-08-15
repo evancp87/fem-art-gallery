@@ -1,3 +1,6 @@
+@use "./colors" as c;
+@use "./mixins" as m;
+
 %btn {
   display: inline-block;
   width: 136px;
@@ -6,4 +9,16 @@
   padding: 0.8em;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
+}
+
+%ftr {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  background-color: c.$gold;
+  padding: 1em;
+  @include m.flexbox-config($flex-direction: column, $justify-content: center);
 }

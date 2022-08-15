@@ -5,6 +5,7 @@ $small-font: 0.8em;
 $medium-weight: 500;
 $lg-weight: 700;
 $heading: 80px;
+$sub-headings: 50px;
 
 // Typography
 
@@ -15,9 +16,6 @@ $heading: 80px;
   font-family: "Big Shoulders Display";
   font-style: normal;
   font-weight: 900;
-  color: c.$black;
-  // font-size: 96px;
-  // line-height: 88px;
   text-transform: uppercase;
 }
 
@@ -27,7 +25,4 @@ $heading: 80px;
   font-family: "Outfit", sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 22px;
-  line-height: 32px;
-  // add color, font-size and line-height
 }

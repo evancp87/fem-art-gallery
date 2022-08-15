@@ -1,16 +1,93 @@
 @use "../abstracts/" as *;
 
-.ftr {
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: auto;
-  background-color: $gold;
-  @include flexbox-config(
-    $flex-direction: column,
-    $justify-content: center,
-    $align-items: center
-  );
+.home-ftr,
+.location-ftr {
+  @extend %ftr;
+  @include flexbox-config($flex-direction: column);
+  padding: 0 2rem;
+
+  @include xs-tablets {
+    padding: 5rem 1rem;
+    @include flexbox-config(
+      $flex-direction: row,
+      $justify-content: space-between,
+      $align-items: baseline
+    );
+  }
+  // @include md-tablet-breakpoint {
+  // }
+  @include desktop-breakpoint {
+    padding: 5rem 10rem;
+  }
+}
+
+.home-ftr {
+  background-color: $black;
+
+  > * {
+    color: $white;
+  }
+}
+
+.home-ftr__heading,
+.ftr_heading {
+  @extend %heading;
+  max-width: 68%;
+  font-size: 36px;
+  margin: {
+    top: 1em;
+    bottom: 1em;
+  }
+  flex: 0 1 auto;
+  @include xs-tablets {
+    flex: 0 1 170px;
+    max-width: 100%;
+  }
+}
+.ftr__info {
+  @extend %body-text;
+  font-size: 18px;
+  flex: 0 1 auto;
+  margin-bottom: 2em;
+  @include xs-tablets {
+    flex: 0 1 300px;
+    margin-bottom: 0;
+  }
+  @include xl-tablets {
+    flex: 0 1 400px;
+  }
+}
+// location page footer
+
+.socials {
+  flex: 0 1 100px;
+
+  .socials__list {
+    @include flexbox-config(
+      $flex-direction: row,
+      $justify-content: flex-start,
+      $align-items: center
+    );
+  }
+
+  .socials__list-item {
+    margin-right: 1em;
+    color: $black;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $gold;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  .ftr_heading,
+  .home-ftr__heading {
+    font-size: 25px;
+  }
+
+  .ftr__info {
+    font-size: 14px;
+  }
 }

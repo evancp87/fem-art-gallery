@@ -5,24 +5,124 @@
 }
 
 // mobile first workflow
+
+.location__back-btn {
+  display: inline-flex;
+  position: absolute;
+  //   justify-content: center;
+  align-items: center;
+  z-index: 100;
+  // width: 75vw;
+  top: 0;
+  left: 10%;
+  background-color: a.$black;
+  color: a.$white;
+
+  &:hover {
+    cursor: pointer;
+    background-color: a.$gold;
+
+    .back-home-btn {
+      background-color: a.$gold;
+    }
+    .location__btn-icon {
+      background-color: a.$black;
+    }
+
+    // .location__btn-icon {
+    //   background-color: a.$gold;
+    //   padding: 1em;
+    // }
+  }
+  @include a.md-phone {
+    // width: 25vw;
+  }
+
+  .location__btn-icon {
+    background-color: a.$gold;
+    padding: 1em;
+  }
+
+  .back-home-btn {
+    background-color: a.$black;
+    font-family: "Big Shoulders Display";
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 3.63636px;
+    margin-left: 2em;
+    margin-right: 2em;
+    text-transform: uppercase;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-rows: 2fr 2fr 1fr;
   min-height: 100vh;
+  position: relative;
+  z-index: 50;
   // @include media query
 }
 
 .location-info {
   color: a.$white;
   background-color: a.$black;
+  padding: 2em;
+  justify-content: space-around;
+  @include a.xs-tablets {
+    @include a.flexbox-config($flex-direction: row);
+    padding: 5em;
+  }
+
   .location-info__header {
     @extend %heading;
     font-size: 50px;
-    line-height: 88px;
+    // line-height: 88px;
     color: currentColor;
-
-    + .location-info__sub-heading {
-      color: a.$gold;
+    margin-right: 2.5em;
+    @include a.xl-tablets {
+      margin-right: 5em;
     }
+  }
+}
+
+.location-info__txt {
+  > .location-info__sub-heading {
+    @extend %heading;
+    font-size: 36px;
+    color: a.$gold;
+    margin: {
+      top: 1em;
+      bottom: 1em;
+    }
+    + .location-info__address {
+      @extend %body-text;
+      font-size: 18px;
+      margin: {
+        top: 1em;
+        bottom: 1em;
+      }
+      @include a.xs-tablets {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.location-info__about {
+  @extend %body-text;
+  font-size: 18px;
+  margin-bottom: 1em;
+  max-width: 100%;
+  @include a.xl-tablets {
+    font-size: 22px;
+    max-width: 75%;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  .location-info .location-info__header {
+    margin-right: 1.5em;
   }
 }

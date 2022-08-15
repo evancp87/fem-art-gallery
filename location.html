@@ -22,7 +22,8 @@
 
 <body>
   <button class="location__back-btn">
-    <a href="./index.html">
+    <img class="location__btn-icon" src="./assets/icon-arrow-left.svg">
+    <a class="back-home-btn" href="./index.html">
       Back to Home
     </a>
   </button>
@@ -38,27 +39,30 @@
         Our location
       </h1>
 
-      <h3 class="location-info__sub-heading">
-        99 King Street
-      </h3>
-      <p class="location-info__address">
+      <div class="location-info__txt">
 
-        Newport</br>
-        RI 02840</br>
-        United States of America
-      </p>
+        <h2 class="location-info__sub-heading">
+          99 King Street
+        </h2>
+        <p class="location-info__address">
 
-      <p class="location-info__about">
-        Our newly opened gallery is located near the Edward King House on 99 King
-        Street, the Modern Art Gallery is free to all visitors and open seven days
-        a week from 8am to 9pm.
+          Newport</br>
+          RI 02840</br>
+          United States of America
+        </p>
 
-      </p>
+        <p class="location-info__about">
+          Our newly opened gallery is located near the Edward King House on 99 King
+          Street, the Modern Art Gallery is free to all visitors and open seven days
+          a week from 8am to 9pm.
+
+        </p>
+      </div>
 
     </main>
 
     <footer class="ftr location-ftr">
-      <h2>
+      <h2 class="ftr_heading">
         Modern Art Gallery
 
       </h2>
@@ -81,11 +85,18 @@
   </div>
   <script>
 
-    const map = L.map('map').setView([41.481493, -71.310328], 13);
+    const map = L.map('map', {
+      center: [51.505, -0.09],
+      zoom: 10
+    }).setView([41.481493, -71.310328], 15);
+
+    L.marker([41.481493, -71.310328]).addTo(map)
+      .bindPopup('Modern Art Gallery, 99 King Street')
+      .openPopup();
 
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
+      maxZoom: 50,
       attribution: '© OpenStreetMap'
     }).addTo(map);
   </script>

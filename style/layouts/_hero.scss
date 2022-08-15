@@ -87,6 +87,7 @@
     @include desktop-breakpoint {
       color: $white;
       font-size: 96px;
+      max-width: 72%;
     }
   }
 
@@ -145,11 +146,10 @@
 }
 
 // sets max-width and width on all elements
-.hero__heading,
+
 .hero__txt-block-two,
 .hero__txt .hero__txt-block-two,
-.hero__txt .hero__txt-block-two,
-.hero__txt .hero__heading {
+.hero__txt .hero__txt-block-two {
   @include tablet-min-max-breakpoint {
     max-width: 100%;
     width: 100%;

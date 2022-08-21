@@ -52,6 +52,12 @@ function watchTask() {
   );
 }
 
+exports.build = series(
+  series(generateCSS, generateJS, function copyAssets() {
+    return src(["*.html", "./assets/**/*"], { base: "/" }).pipe(dest("dist"));
+  })
+);
+
 exports.default = series(
   generateCSS,
   generateJS,

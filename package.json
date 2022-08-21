@@ -17,6 +17,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gulp": "^4.0.2",
+    "gulp-css-copy-assets": "^0.0.5",
     "gulp-sass": "^5.1.0",
     "prettier": "^2.7.1",
     "sass": "^1.53.0"

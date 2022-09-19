@@ -7,6 +7,11 @@ const browserSync = require("browser-sync").create();
 const cssnano = require("cssnano");
 const postcss = require("gulp-postcss");
 
+// builds html to
+function html() {
+  return src("*.html").pipe(dest("dist"));
+}
+
 // compile scss to css
 
 function generateCSS() {
@@ -53,12 +58,13 @@ function watchTask() {
 }
 
 exports.build = series(
-  series(generateCSS, generateJS, function copyAssets() {
+  series(generateCSS, generateJS, html, function copyAssets() {
     return src(["*.html", "./assets/**/*"], { base: "/" }).pipe(dest("dist"));
   })
 );
 
 exports.default = series(
+  html,
   generateCSS,
   generateJS,
   browserSyncServe,
